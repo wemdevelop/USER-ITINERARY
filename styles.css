@@ -1651,7 +1651,7 @@ body {
         justify-content: flex-start;
     }
 
-    /* Hero gallery goes to 2 columns */
+    /* Hero gallery goes to responsive 2-column layout */
     .hero-gallery-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
@@ -1659,73 +1659,48 @@ body {
     }
 
     .grid-item.item-large,
-    .grid-item.item-tall {
-        grid-row: span 1;
-        height: auto;
-        aspect-ratio: 4/3;
-    }
-
+    .grid-item.item-tall,
     .grid-item {
-        height: auto;
-        aspect-ratio: 4/3;
-        overflow: hidden;
+        grid-row: span 1;
+        grid-column: span 1;
+        height: 140px;
+        aspect-ratio: auto;
     }
 
-    .grid-item img {
+    .grid-item.item-large,
+    .hero-gallery-grid .grid-item:last-child {
+        grid-column: span 2;
+        height: 200px;
+    }
+
+    .hero-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
-    /* Hero section padding */
+    /* Hero section padding & header */
     .top-hero-section {
         padding: 16px 16px 0 16px;
     }
 
+    .hero-header {
+        margin-bottom: 12px;
+    }
+
     .hero-title {
-        font-size: 18px;
+        font-size: 20px;
+        line-height: 1.3;
     }
 
-    /* Tabs row */
-    .hero-tabs-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+    .hero-tags {
+        flex-wrap: wrap;
+        gap: 6px;
     }
 
-    .hero-tabs {
-        width: 100%;
-        overflow-x: auto;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
-    .hero-tabs::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* Category pills scroll */
-    .category-tabs-container {
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-    }
-
-    .cat-pill {
-        white-space: nowrap;
-    }
-
-    /* Pricing card */
-    .price-card-purple {
-        border-radius: 10px;
-    }
-
-    .big-price {
-        font-size: 24px;
-    }
-
-    /* Feedback */
-    .feedback-input {
-        min-height: 70px;
+    .view-gallery-btn {
+        padding: 5px 10px;
+        font-size: 10px;
     }
 }
 
@@ -1742,6 +1717,7 @@ body {
 
     .top-header-left {
         gap: 8px;
+        flex-wrap: wrap;
     }
 
     .top-header-right {
@@ -1773,21 +1749,31 @@ body {
         font-size: 13px;
     }
 
-    /* Hero gallery single column on very small screens */
+    /* Hero gallery optimized layout for small mobile screens */
+    .top-hero-section {
+        padding: 12px 12px 0 12px;
+    }
+
     .hero-gallery-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
     }
 
     .grid-item.item-large,
+    .hero-gallery-grid .grid-item:last-child {
+        grid-column: span 2;
+        height: 170px;
+    }
+
     .grid-item.item-tall,
     .grid-item {
-        height: 160px;
+        height: 110px;
         grid-row: span 1;
+        grid-column: span 1;
     }
 
     .hero-title {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .hero-tags {
