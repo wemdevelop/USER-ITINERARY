@@ -74,6 +74,21 @@ body {
     font-size: 13px;
     font-weight: 500;
     color: #374151;
+    cursor: pointer;
+    padding: 3px 10px;
+    border-radius: 14px;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.header-item:hover {
+    background-color: rgba(37, 99, 235, 0.1);
+    color: var(--primary-blue);
+}
+
+.header-item.active {
+    background-color: var(--primary-blue);
+    color: #ffffff !important;
 }
 
 .top-header-right {
@@ -925,10 +940,6 @@ body {
    TAB CONTENT VIEWS (Itinerary / Policies / Summary)
    ========================================================================== */
 .tab-content-view {
-    display: none;
-}
-
-.tab-content-view.active {
     display: block;
 }
 
