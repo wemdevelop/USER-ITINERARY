@@ -198,20 +198,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // CONFIRMATION MODAL
     // ==========================================
-    const modal         = document.getElementById('confirmModal');
-    const modalCancel   = document.getElementById('modalCancelBtn');
-    const modalConfirm  = document.getElementById('modalConfirmBtn');
-    const modalBadge    = document.getElementById('modalPackageBadge');
-    const modalHotels   = document.getElementById('modalHotels');
+    const modal = document.getElementById('confirmModal');
+    const modalCancel = document.getElementById('modalCancelBtn');
+    const modalConfirm = document.getElementById('modalConfirmBtn');
+    const modalBadge = document.getElementById('modalPackageBadge');
+    const modalHotels = document.getElementById('modalHotels');
     const modalActivity = document.getElementById('modalActivity');
     const modalVehicles = document.getElementById('modalVehicles');
-    const modalTax      = document.getElementById('modalTax');
-    const modalTotal    = document.getElementById('modalTotal');
+    const modalTax = document.getElementById('modalTax');
+    const modalTotal = document.getElementById('modalTotal');
 
     // Badge colours per category
     const badgeColors = {
-        deluxe:   '#6156f6',
-        ruby:     '#f43f5e',
+        deluxe: '#6156f6',
+        ruby: '#f43f5e',
         standard: '#16a34a'
     };
 
@@ -223,19 +223,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Find which category is currently active
         const activeBtn = document.querySelector('.cat-pill.active');
-        const catKey    = activeBtn ? activeBtn.dataset.category : 'deluxe';
-        const data      = pricingData[catKey];
+        const catKey = activeBtn ? activeBtn.dataset.category : 'deluxe';
+        const data = pricingData[catKey];
 
         // Update modal badge
-        modalBadge.textContent        = data.label;
-        modalBadge.style.background   = badgeColors[catKey];
+        modalBadge.textContent = data.label;
+        modalBadge.style.background = badgeColors[catKey];
 
         // Populate breakdown
-        modalHotels.textContent   = formatCurrency(data.hotels);
+        modalHotels.textContent = formatCurrency(data.hotels);
         modalActivity.textContent = formatCurrency(data.activity);
         modalVehicles.textContent = formatCurrency(data.vehicles);
-        modalTax.textContent      = formatCurrency(data.tax);
-        modalTotal.textContent    = formatCurrency(data.total);
+        modalTax.textContent = formatCurrency(data.tax);
+        modalTotal.textContent = formatCurrency(data.total);
 
         modal.classList.add('active');
     }
@@ -280,11 +280,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Reset modal confirm button
                 setTimeout(() => {
-                    modalConfirm.textContent  = 'Yes, Confirm Booking';
+                    modalConfirm.textContent = 'Yes, Confirm Booking';
                     modalConfirm.style.background = '';
                 }, 400);
             }, 1200);
         });
     }
+
+    // ==========================================
+    // TOP HEADER ITEMS FILTER FUNCTIONALITY
+    // ==========================================
+    const headerFilterItems = document.querySelectorAll('.header-item[data-filter]');
+    const allEventCards = document.querySelectorAll('.event-card');
+    const daySections = document.querySelectorAll('.day-section');
+
+    headerFilterItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const filterType = item.dataset.filter;
+
+            // Toggle active UI state
+            headerFilterItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+
+            // Filter event cards
+            allEventCards.forEach(card => {
+                const cardType = card.dataset.type;
+                if (filterType === 'all' || cardType === filterType) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update day section display if all cards are hidden
+            daySections.forEach(section => {
+                const visibleCards = section.querySelectorAll('.event-card:not([style*="display: none"])');
+                if (filterType !== 'all' && visibleCards.length === 0) {
+                    section.style.opacity = '0.4';
+                } else {
+                    section.style.opacity = '1';
+                }
+            });
+
+            // Scroll smoothly to itinerary feed section
+            const itineraryTab = document.getElementById('tab-itinerary');
+            if (itineraryTab) {
+                itineraryTab.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
 
 });
