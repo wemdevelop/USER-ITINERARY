@@ -22,19 +22,18 @@
 
                 <div class="top-header-left">
                     <div class="header-logo-wrap">
-                        <img src="images/livetour.png" alt="LiveTour Logo"
-                            class="header-logo">
+                        <img src="images/livetour.png" alt="LiveTour Logo" class="header-logo">
                     </div>
-                    <button class="pill-blue-outline">1 Day Plan</button>
-                    <span class="header-item">1 Transfer</span>
-                    <span class="header-item">1 Hotel</span>
-                    <span class="header-item">1 Activity</span>
-                    <span class="header-item">0 Meals</span>
+                    <button class="pill-blue-outline header-item" data-filter="all">All Items</button>
+                    <span class="header-item" data-filter="transfer">1 Transfer</span>
+                    <span class="header-item" data-filter="hotel">1 Hotel</span>
+                    <span class="header-item" data-filter="activity">1 Activity</span>
+                    <span class="header-item" data-filter="meals">0 Meals</span>
                 </div>
-                <div class="top-header-right">
+                <!-- <div class="top-header-right">
                     <span class="save-template">Save Template</span>
                     <span class="clear-itinerary">Clear Itinerary</span>
-                </div>
+                </div> -->
             </header>
 
             <!-- MAIN CONTENT ROW -->
@@ -110,18 +109,130 @@
                             </div>
                         </div>
 
-                        <div class="hero-tabs-row">
-                            <div class="hero-tabs">
-                                <span class="hero-tab active" data-tab="itinerary">ITINERARY</span>
-                                <span class="hero-tab" data-tab="policies">POLICIES</span>
-                                <span class="hero-tab" data-tab="summary">SUMMARY</span>
+                    </div>
+
+                    <!-- SUMMARY TAB VIEW -->
+                    <div id="tab-summary" class="tab-content-view">
+                        <div class="tab-view-container">
+                            <h2 class="view-section-title"><i class="fa-solid fa-clipboard-list"></i> Itinerary Summary
+                            </h2>
+                            <p class="view-section-subtitle">Executive overview of your travel itinerary, accommodation
+                                details, and booked services.</p>
+
+                            <!-- Quick Stat Cards Grid -->
+                            <div class="summary-stats-grid">
+                                <div class="stat-card">
+                                    <div class="stat-icon blue-bg"><i class="fa-regular fa-calendar"></i></div>
+                                    <div class="stat-info">
+                                        <span class="stat-value">3N / 4D</span>
+                                        <span class="stat-label">Duration</span>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon purple-bg"><i class="fa-solid fa-hotel"></i></div>
+                                    <div class="stat-info">
+                                        <span class="stat-value">2 Properties</span>
+                                        <span class="stat-label">Hotels Included</span>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon orange-bg"><i class="fa-solid fa-car"></i></div>
+                                    <div class="stat-info">
+                                        <span class="stat-value">2 Transfers</span>
+                                        <span class="stat-label">Private Vehicles</span>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon green-bg"><i class="fa-solid fa-compass"></i></div>
+                                    <div class="stat-info">
+                                        <span class="stat-value">2 Activities</span>
+                                        <span class="stat-label">Tours & Cruises</span>
+                                    </div>
+                                </div>
                             </div>
-                            <button class="hero-share-btn"><i class="fa-solid fa-share"></i> Share</button>
+
+                            <!-- Day-by-Day Summary Timeline -->
+                            <div class="summary-card">
+                                <h3 class="summary-card-title"><i class="fa-solid fa-route"></i> Day-by-Day Overview
+                                </h3>
+                                <div class="summary-timeline">
+                                    <!-- Day 1 Summary -->
+                                    <div class="timeline-item">
+                                        <div class="timeline-badge">Day 1</div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-header">
+                                                <h4 class="timeline-title">Mon, 31 Aug &bull; Arrival in Kochi</h4>
+                                                <span class="timeline-loc"><i class="fa-solid fa-location-dot"></i>
+                                                    Kochi, Kerala</span>
+                                            </div>
+                                            <ul class="timeline-events">
+                                                <li><i class="fa-solid fa-car-side"></i> <strong>Transfer:</strong> SUV
+                                                    Private Transfer from Airport/Station to Hotel</li>
+                                                <li><i class="fa-solid fa-hotel"></i> <strong>Stay:</strong> Beach
+                                                    Heritage Inn (1 Night)</li>
+                                                <li><i class="fa-solid fa-shapes"></i> <strong>Activity:</strong> Fort
+                                                    Kochi & Mattancherry Heritage Walk with Sunset Cruise</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Day 2 Summary -->
+                                    <div class="timeline-item">
+                                        <div class="timeline-badge">Day 2</div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-header">
+                                                <h4 class="timeline-title">Tue, 01 Sep &bull; Scenic Transfer to Munnar
+                                                </h4>
+                                                <span class="timeline-loc"><i class="fa-solid fa-location-dot"></i>
+                                                    Munnar, Kerala</span>
+                                            </div>
+                                            <ul class="timeline-events">
+                                                <li><i class="fa-solid fa-car-side"></i> <strong>Transfer:</strong>
+                                                    Sedan Transfer to Munnar</li>
+                                                <li><i class="fa-solid fa-hotel"></i> <strong>Stay:</strong> Munnar Tea
+                                                    Estate Resort (2 Nights)</li>
+                                                <li><i class="fa-solid fa-shapes"></i> <strong>Activity:</strong> Tea
+                                                    Garden Tour & Spice Plantation Visit</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pricing Breakdown Card -->
+                            <div class="summary-card">
+                                <h3 class="summary-card-title"><i class="fa-solid fa-receipt"></i> Costing & Inclusions
+                                    Breakdown</h3>
+                                <div class="summary-cost-box">
+                                    <div class="cost-item">
+                                        <span class="cost-label">Accommodation (Hotels & Resorts)</span>
+                                        <span class="cost-val">&#8377;6,000</span>
+                                    </div>
+                                    <div class="cost-item">
+                                        <span class="cost-label">Sightseeing & Tours</span>
+                                        <span class="cost-val">&#8377;800</span>
+                                    </div>
+                                    <div class="cost-item">
+                                        <span class="cost-label">Private Vehicle Transfers</span>
+                                        <span class="cost-val">&#8377;3,300</span>
+                                    </div>
+                                    <div class="cost-item">
+                                        <span class="cost-label">Applicable Taxes (GST)</span>
+                                        <span class="cost-val">&#8377;1,389</span>
+                                    </div>
+                                    <div class="cost-divider"></div>
+                                    <div class="cost-item cost-total-row">
+                                        <span class="cost-label">Grand Total (Deluxe Package)</span>
+                                        <span class="cost-total-val">&#8377;11,489</span>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
                     <!-- ITINERARY TAB VIEW -->
-                    <div id="tab-itinerary" class="tab-content-view active">
+                    <div id="tab-itinerary" class="tab-content-view">
 
                         <!-- DAY 1 SECTION -->
                         <div class="day-section" data-day="1">
@@ -136,7 +247,7 @@
                             </div>
 
                             <!-- Event 1: Transfer -->
-                            <div class="event-card">
+                            <div class="event-card" data-type="transfer">
                                 <div class="event-header">
                                     <div class="event-title-type">
                                         <i class="fa-solid fa-car-side"></i>
@@ -157,7 +268,7 @@
                             </div>
 
                             <!-- Event 2: Hotel -->
-                            <div class="event-card">
+                            <div class="event-card" data-type="hotel">
                                 <div class="event-header">
                                     <div class="event-title-type">
                                         <i class="fa-solid fa-hotel"></i>
@@ -178,7 +289,7 @@
                             </div>
 
                             <!-- Event 3: Activity -->
-                            <div class="event-card">
+                            <div class="event-card" data-type="activity">
                                 <div class="event-header">
                                     <div class="event-title-type">
                                         <i class="fa-solid fa-shapes"></i>
@@ -219,7 +330,7 @@
                             </div>
 
                             <!-- Event 1: Transfer -->
-                            <div class="event-card">
+                            <div class="event-card" data-type="transfer">
                                 <div class="event-header">
                                     <div class="event-title-type">
                                         <i class="fa-solid fa-car-side"></i>
@@ -240,7 +351,7 @@
                             </div>
 
                             <!-- Event 2: Hotel -->
-                            <div class="event-card">
+                            <div class="event-card" data-type="hotel">
                                 <div class="event-header">
                                     <div class="event-title-type">
                                         <i class="fa-solid fa-hotel"></i>
@@ -261,7 +372,7 @@
                             </div>
 
                             <!-- Event 3: Activity -->
-                            <div class="event-card">
+                            <div class="event-card" data-type="activity">
                                 <div class="event-header">
                                     <div class="event-title-type">
                                         <i class="fa-solid fa-shapes"></i>
@@ -400,130 +511,15 @@
                         </div>
                     </div>
 
-                    <!-- SUMMARY TAB VIEW -->
-                    <div id="tab-summary" class="tab-content-view">
-                        <div class="tab-view-container">
-                            <h2 class="view-section-title"><i class="fa-solid fa-clipboard-list"></i> Itinerary Summary
-                            </h2>
-                            <p class="view-section-subtitle">Executive overview of your travel itinerary, accommodation
-                                details, and booked services.</p>
 
-                            <!-- Quick Stat Cards Grid -->
-                            <div class="summary-stats-grid">
-                                <div class="stat-card">
-                                    <div class="stat-icon blue-bg"><i class="fa-regular fa-calendar"></i></div>
-                                    <div class="stat-info">
-                                        <span class="stat-value">3N / 4D</span>
-                                        <span class="stat-label">Duration</span>
-                                    </div>
-                                </div>
-                                <div class="stat-card">
-                                    <div class="stat-icon purple-bg"><i class="fa-solid fa-hotel"></i></div>
-                                    <div class="stat-info">
-                                        <span class="stat-value">2 Properties</span>
-                                        <span class="stat-label">Hotels Included</span>
-                                    </div>
-                                </div>
-                                <div class="stat-card">
-                                    <div class="stat-icon orange-bg"><i class="fa-solid fa-car"></i></div>
-                                    <div class="stat-info">
-                                        <span class="stat-value">2 Transfers</span>
-                                        <span class="stat-label">Private Vehicles</span>
-                                    </div>
-                                </div>
-                                <div class="stat-card">
-                                    <div class="stat-icon green-bg"><i class="fa-solid fa-compass"></i></div>
-                                    <div class="stat-info">
-                                        <span class="stat-value">2 Activities</span>
-                                        <span class="stat-label">Tours & Cruises</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Day-by-Day Summary Timeline -->
-                            <div class="summary-card">
-                                <h3 class="summary-card-title"><i class="fa-solid fa-route"></i> Day-by-Day Overview
-                                </h3>
-                                <div class="summary-timeline">
-                                    <!-- Day 1 Summary -->
-                                    <div class="timeline-item">
-                                        <div class="timeline-badge">Day 1</div>
-                                        <div class="timeline-content">
-                                            <div class="timeline-header">
-                                                <h4 class="timeline-title">Mon, 31 Aug &bull; Arrival in Kochi</h4>
-                                                <span class="timeline-loc"><i class="fa-solid fa-location-dot"></i>
-                                                    Kochi, Kerala</span>
-                                            </div>
-                                            <ul class="timeline-events">
-                                                <li><i class="fa-solid fa-car-side"></i> <strong>Transfer:</strong> SUV
-                                                    Private Transfer from Airport/Station to Hotel</li>
-                                                <li><i class="fa-solid fa-hotel"></i> <strong>Stay:</strong> Beach
-                                                    Heritage Inn (1 Night)</li>
-                                                <li><i class="fa-solid fa-shapes"></i> <strong>Activity:</strong> Fort
-                                                    Kochi & Mattancherry Heritage Walk with Sunset Cruise</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <!-- Day 2 Summary -->
-                                    <div class="timeline-item">
-                                        <div class="timeline-badge">Day 2</div>
-                                        <div class="timeline-content">
-                                            <div class="timeline-header">
-                                                <h4 class="timeline-title">Tue, 01 Sep &bull; Scenic Transfer to Munnar
-                                                </h4>
-                                                <span class="timeline-loc"><i class="fa-solid fa-location-dot"></i>
-                                                    Munnar, Kerala</span>
-                                            </div>
-                                            <ul class="timeline-events">
-                                                <li><i class="fa-solid fa-car-side"></i> <strong>Transfer:</strong>
-                                                    Sedan Transfer to Munnar</li>
-                                                <li><i class="fa-solid fa-hotel"></i> <strong>Stay:</strong> Munnar Tea
-                                                    Estate Resort (2 Nights)</li>
-                                                <li><i class="fa-solid fa-shapes"></i> <strong>Activity:</strong> Tea
-                                                    Garden Tour & Spice Plantation Visit</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Pricing Breakdown Card -->
-                            <div class="summary-card">
-                                <h3 class="summary-card-title"><i class="fa-solid fa-receipt"></i> Costing & Inclusions
-                                    Breakdown</h3>
-                                <div class="summary-cost-box">
-                                    <div class="cost-item">
-                                        <span class="cost-label">Accommodation (Hotels & Resorts)</span>
-                                        <span class="cost-val">&#8377;6,000</span>
-                                    </div>
-                                    <div class="cost-item">
-                                        <span class="cost-label">Sightseeing & Tours</span>
-                                        <span class="cost-val">&#8377;800</span>
-                                    </div>
-                                    <div class="cost-item">
-                                        <span class="cost-label">Private Vehicle Transfers</span>
-                                        <span class="cost-val">&#8377;3,300</span>
-                                    </div>
-                                    <div class="cost-item">
-                                        <span class="cost-label">Applicable Taxes (GST)</span>
-                                        <span class="cost-val">&#8377;1,389</span>
-                                    </div>
-                                    <div class="cost-divider"></div>
-                                    <div class="cost-item cost-total-row">
-                                        <span class="cost-label">Grand Total (Deluxe Package)</span>
-                                        <span class="cost-total-val">&#8377;11,489</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
             </div>
         </div>
 
         <!-- RIGHT SIDEBAR -->
         <aside class="sidebar-right">
+            <div class="category-header-wrap" style="margin-bottom: 12px;">
+                <h3 style="margin: 0; font-size: 14px; font-weight: 700; color: #111827; letter-spacing: -0.2px;">Select Your Preferred Category</h3>
+            </div>
 
             <div class="category-tabs-container">
                 <button class="cat-pill cat-deluxe active" data-category="deluxe">Deluxe ₹11,489</button>
@@ -605,9 +601,11 @@
 
             <!-- Feedback Section -->
             <div class="feedback-section">
-                <h4 class="feedback-title">Itinerary Feedback</h4>
-                <textarea class="feedback-input" placeholder="Share your thoughts or request changes..."></textarea>
-                <button class="btn-submit-feedback">Submit Feedback</button>
+                <h4 class="feedback-title"><i class="fa-solid fa-headset"
+                        style="margin-right: 6px; color: var(--primary-blue);"></i>Talk to a Consultant</h4>
+                <textarea class="feedback-input"
+                    placeholder="Share your queries or talk to our travel consultant..."></textarea>
+                <button class="btn-submit-feedback">Send Message to Consultant</button>
             </div>
 
         </aside>
@@ -656,6 +654,10 @@
                     <span id="modalTax">&#8377;1,389</span>
                 </div>
                 <div class="modal-divider"></div>
+                <div class="modal-row modal-total-row">
+                    <span>Booking Payment</span>
+                    <span id="modalBookingPayment">&#8377;6,000</span>
+                </div>
                 <div class="modal-row modal-total-row">
                     <span>Total</span>
                     <span id="modalTotal">&#8377;11,489</span>
